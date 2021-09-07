@@ -2,9 +2,6 @@ const express = require("express");
 const logger = require("morgan");
 const mongoose = require("mongoose");
 const compression = require("compression");
-// const dotenv = require("dotenv");
-
-// dotenv.config()
 
 const PORT = 3000;
 
@@ -18,7 +15,7 @@ app.use(express.json());
 
 app.use(express.static("client"));
 
-mongoose.connect(process.env.MONGODB_URI || 3000, {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/budget", {
   useNewUrlParser: true,
   useFindAndModify: false
 });
